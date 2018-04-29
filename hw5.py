@@ -19,13 +19,13 @@ def main(filename):
     from collections import Counter
     word_counter = Counter(all_words)
 
-    with open("word_count.csv", "w") as csv_file:
+    with open("wordcount.csv", "w") as csv_file:
         writer =csv.writer(csv_file)
         writer.writerow(['word', 'count'])
         writer.writerows(word_counter.most_common())
 
-    json.dump(word_counter,open('word_count.json','w'))
-    pickle.dump(word_counter,open('word_count.pkl','wb'))
+    json.dump(word_counter,open('wordcount.json','w'))
+    pickle.dump(word_counter,open('wordcount.pkl','wb'))
 
     # BONUS: dump to a pickle file named "wordcount.pkl"
     # hint: dump the Counter object directly
